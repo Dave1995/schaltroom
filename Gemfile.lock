@@ -19,6 +19,7 @@ GEM
       ruby-progressbar
     mocha (1.8.0)
       metaclass (~> 0.0.1)
+    rake (12.3.2)
     ruby-progressbar (1.10.1)
     simplecov (0.16.1)
       docile (~> 1.1)
@@ -34,6 +35,7 @@ DEPENDENCIES
   minitest
   minitest-reporters
   mocha
+  rake
   schaltroom!
   simplecov
 

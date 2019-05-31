@@ -1,0 +1,41 @@
+PATH
+  remote: .
+  specs:
+    schaltroom (0.0.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ansi (1.5.0)
+    builder (3.2.3)
+    docile (1.3.1)
+    json (2.2.0)
+    metaclass (0.0.4)
+    minitest (5.11.3)
+    minitest-reporters (1.3.6)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
+    mocha (1.8.0)
+      metaclass (~> 0.0.1)
+    ruby-progressbar (1.10.1)
+    simplecov (0.16.1)
+      docile (~> 1.1)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler
+  minitest
+  minitest-reporters
+  mocha
+  schaltroom!
+  simplecov
+
+BUNDLED WITH
+   1.17.3

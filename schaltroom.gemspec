@@ -1,18 +1,23 @@
+# frozen_string_literal: true
+
 Gem::Specification.new do |spec|
   spec.name        = 'schaltroom'
-  spec.version     = '0.0.0'
-  spec.summary     = "Schaltroom"
-  spec.description = "Schaltroom is the Client Gem for the Schaltroom configuration server"
-  spec.authors     = ["David Erler"]
-  spec.email       = 'daviderler1959@gmail.com'
-  spec.files       = ["lib/schaltroom.rb"]
+  spec.version     = '0.0.1.pre'
+  spec.summary     = 'schaltroom'
+  spec.description = 'schaltroom is the Client Gem for the Schaltroom' \
+                     'configuration server'
+  spec.authors     = ['David Erler']
+  spec.email       = 'daviderler1995@gmail.com'
+  spec.files       = Dir['lib/**/*.rb'] + Dir['bin/*']
   spec.homepage    = 'https://rubygems.org/gems/schaltroom'
-  spec.license     = ''
+  spec.license     = 'MIT'
 
-  spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'minitest'
-  spec.add_development_dependency 'bundler'
-  spec.add_development_dependency 'mocha'
-  spec.add_development_dependency 'simplecov'
-  spec.add_development_dependency 'minitest-reporters'
+  spec.add_development_dependency 'bundler', '~> 1.17.3'
+  spec.add_development_dependency 'minitest', '~> 5.0'
+  spec.add_development_dependency 'minitest-reporters', '~> 1.4'
+  spec.add_development_dependency 'mocha', '~> 1.9'
+  spec.add_development_dependency 'rake', '~> 13.0'
+  spec.add_development_dependency 'simplecov', '~> 0.17.1'
+
+  spec.add_dependency 'zeitwerk', '~> 2.1', '>= 2.1.10'
 end

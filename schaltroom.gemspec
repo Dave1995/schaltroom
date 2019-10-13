@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name        = 'schaltroom'
-  spec.version     = '0.0.1.pre'
+  spec.version     = '0.0.2'
   spec.summary     = 'schaltroom'
   spec.description = 'schaltroom is the Client Gem for the Schaltroom' \
                      'configuration server'

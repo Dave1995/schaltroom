@@ -13,5 +13,9 @@ module Schaltroom
         raise Exception, "unknown type: #{type.to_sym}"
       end
     end
+
+    def add_gem(gem)
+      add_feature(gem.to_s.to_sym, :version, gem::VERSION::STRING)
+    end
   end
 end

@@ -102,6 +102,17 @@ module Schaltroom
     @calls << { method: method.to_sym, caller: caller_stack[0] }
     @calls = @calls.uniq
   end
+
+  def self.with_config_and_repository(config, repository)
+    return unless block_given?
+    current_config = @config
+    current_repository = @repository
+    @config = config
+    @repository = @repository.merge(repository)
+    yield
+    @config = current_config
+    @repository = current_repository
+  end
 end
 
 loader.eager_load

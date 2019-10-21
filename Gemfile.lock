@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    schaltroom (0.0.1.pre)
+    schaltroom (0.0.2)
       zeitwerk (~> 2.1, >= 2.1.10)
 
 GEM
@@ -27,7 +27,7 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
-    zeitwerk (2.1.10)
+    zeitwerk (2.2.0)
 
 PLATFORMS
   ruby

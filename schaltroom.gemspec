@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
+require_relative 'lib/schaltroom/version'
+
 Gem::Specification.new do |spec|
   spec.name        = 'schaltroom'
-  spec.version     = '0.0.2'
+  spec.version     = Schaltroom::VERSION::STRING
   spec.summary     = 'schaltroom'
   spec.description = 'schaltroom is the Client Gem for the Schaltroom' \
                      'configuration server'

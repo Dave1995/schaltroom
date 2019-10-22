@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.homepage    = 'https://rubygems.org/gems/schaltroom'
   spec.license     = 'MIT'
 
-  spec.add_development_dependency 'bundler', '~> 1.17.3'
+  spec.add_development_dependency 'bundler', '>=1.16'
   spec.add_development_dependency 'minitest', '~> 5.0'
   spec.add_development_dependency 'minitest-reporters', '~> 1.4'
   spec.add_development_dependency 'mocha', '~> 1.9'

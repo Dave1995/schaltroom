@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    schaltroom (0.0.2)
+    schaltroom (0.0.3)
       zeitwerk (~> 2.1, >= 2.1.10)
 
 GEM
@@ -33,7 +33,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.17.3)
+  bundler (>= 1.16)
   minitest (~> 5.0)
   minitest-reporters (~> 1.4)
   mocha (~> 1.9)

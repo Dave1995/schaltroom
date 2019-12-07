@@ -26,6 +26,17 @@ module Schaltroom
     end
   end
 
+  def self.[](item)
+    handle_caller(caller, __method__, item)
+    feature = Schaltroom.find_feature(item)
+    raise ArgumentError, "Feature: #{item} is unknown. Please add it to your Schaltroom.config" if feature.nil?
+    if feature[:type] == :boolean
+      return feature[:value]
+    else
+      Feature.new(feature)
+    end
+  end
+
   def self.repository
     if block_given?
       yield @repository
@@ -60,46 +71,46 @@ module Schaltroom
   end
 
   def self.active?(name)
-    handle_caller(caller, __method__)
+    handle_caller(caller, __method__, name)
     feature = find_feature(name)
     return false unless feature
     feature[:value]
   end
 
   def self.inactive?(name)
-    handle_caller(caller, __method__)
+    handle_caller(caller, __method__, name)
     !active?(name)
   end
 
   def self.active_since?(name, version)
-    handle_caller(caller, __method__)
+    handle_caller(caller, __method__, name)
     Gem::Version.new(version) <= Gem::Version.new(find_feature(name)[:value])
   end
 
   def self.inactive_since?(name, version)
-    handle_caller(caller, __method__)
+    handle_caller(caller, __method__, name)
     Gem::Version.new(version) > Gem::Version.new(find_feature(name)[:value])
   end
 
   def self.active_before?(name, version)
-    handle_caller(caller, __method__)
+    handle_caller(caller, __method__, name)
     Gem::Version.new(version) > Gem::Version.new(find_feature(name)[:value])
   end
 
   def self.inactive_before?(name, version)
-    handle_caller(caller, __method__)
+    handle_caller(caller, __method__, name)
     Gem::Version.new(version) <= Gem::Version.new(find_feature(name)[:value])
   end
 
   def self.active_between?(name, first_version, last_version)
-    handle_caller(caller, __method__)
+    handle_caller(caller, __method__, name)
     Gem::Version.new(first_version) <= Gem::Version.new(find_feature(name)[:value]) && Gem::Version.new(last_version) >= Gem::Version.new(find_feature(name)[:value])
   end
 
-  def self.handle_caller(caller_stack, method)
+  def self.handle_caller(caller_stack, method, feature_name)
     return unless @config.monitoring == :enabled
 
-    @calls << { method: method.to_sym, caller: caller_stack[0] }
+    @calls << { feature_name: feature_name, method: method.to_sym, caller: caller_stack[0] }
     @calls = @calls.uniq
   end
 
